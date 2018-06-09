@@ -8,7 +8,7 @@ layout: default
 
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
 
-  <!-- <ul class="post-list">
+  <ul class="post-list">
     {% for post in paginator.posts %}
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
@@ -35,32 +35,18 @@ layout: default
         </header>
 
         <div class="post-content">
-          {{ post.excerpt }}
+          {{ post.content | strip_html | truncatewords: 30 }}
+          <!-- {{ post.excerpt }} -->
         </div>
-        {% if post.content contains site.excerpt_separator %}
+        <!-- {% if post.content contains site.excerpt_separator %}
           <p class="post-continue">
             <a href="{{ post.url | relative_url }}">Read on &rarr;</a>
           </p>
-        {% endif %}
+        {% endif %} -->
       </li>
     {% endfor %}
-  </ul> -->
-    <div class="catalogue">
-      {% for post in paginator.posts %}
-        <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
-          <div>
-            <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-            <h1 class="catalogue-title">{{ post.title }}</h1>
-            <div class="catalogue-line"></div>
+  </ul>
 
-            <p>
-              {{ post.content | strip_html | truncatewords: 30 }}
-            </p>
-
-          </div>
-        </a>
-      {% endfor %}
-    </div>
 
   </div>
 
