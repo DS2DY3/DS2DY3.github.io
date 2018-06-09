@@ -73,6 +73,13 @@
   font-size: 20px;
 }
 
+.li-line {
+  @include transition(all .3s ease-out);
+  border-top: .2rem solid $default-shade;
+  display: block;
+  width: 2rem;
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -82,12 +89,7 @@
   }
 
   > li {
-    &-line {
-      @include transition(all .3s ease-out);
-      border-top: .2rem solid $default-shade;
-      display: block;
-      width: 2rem;
-    }
+
     margin-bottom: $spacing-unit;
 
     &:not(:first-child) {
