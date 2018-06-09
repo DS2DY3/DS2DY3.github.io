@@ -74,6 +74,12 @@
 }
 
 
+post-list-line {
+  @include transition(all .3s ease-out);
+  border-top: 4px solid $default-shade;
+  display: block;
+  width: 2rem;
+}
 
 .post-list {
   margin-left: 0;
@@ -82,12 +88,7 @@
   .post-link:hover {
     text-decoration: none;
   }
-  &-line {
-    @include transition(all .3s ease-out);
-    border-top: 4px solid $default-shade;
-    display: block;
-    width: 2rem;
-  }
+
   > li {
 	  &:hover .post-list-line,
 	  &:focus .post-list-line {
