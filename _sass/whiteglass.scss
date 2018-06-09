@@ -22,6 +22,8 @@ $content-width:    800px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
+$default-shade: #353535;
+
 // Use media queries like this:
 // @include media-query($on-palm) {
 //   .wrapper {
@@ -33,6 +35,12 @@ $on-laptop:        800px !default;
   @media screen and (max-width: $device) {
     @content;
   }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+          transition: $args;
 }
 
 
