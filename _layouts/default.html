@@ -21,20 +21,20 @@
       </div>
     </main>
 
-	<div class="pagination">
-	  {% if paginator.previous_page %}
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-	  {% endif %}
-	  {% if paginator.next_page %}
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-	  {% endif %}
-
-	  <span>{{ paginator.page }}</span>
-	  <!-- <footer>
-		<span>
-		  &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
-		</span>
-	  </footer> -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+      {% endif %}
+      <span>{{ paginator.page }}</span>
+    </div>
+    <footer>
+      <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+      </span>
+    </footer>
   </body>
 
 </html>
