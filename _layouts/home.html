@@ -45,7 +45,6 @@ layout: default
       </li>
     {% endfor %}
   </ul> -->
-
     <div class="catalogue">
       {% for post in paginator.posts %}
         <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
@@ -62,6 +61,7 @@ layout: default
         </a>
       {% endfor %}
     </div>
+
   </div>
 
 </div>
