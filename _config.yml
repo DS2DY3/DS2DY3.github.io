@@ -20,8 +20,20 @@ sass:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll-archives
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
 paginate:       5
+
+
+# jekyll-archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: category_archives
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
