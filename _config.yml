@@ -1,0 +1,28 @@
+# Site settings
+title:          DS2DY3
+description:    "爱你就像爱生命"
+# baseurl:        "/tale"
+url:            "https://ds2dy3.github.io"
+
+# Author
+author:
+  name:         D.S. Qiu
+  url:          http://ds2dy3.github.io
+  email:        gd.s.qiu@gmail.com
+
+# Build settings
+markdown:       kramdown
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-paginate
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
