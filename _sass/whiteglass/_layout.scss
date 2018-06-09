@@ -82,18 +82,18 @@
   .post-link:hover {
     text-decoration: none;
   }
-
+  &-line {
+    @include transition(all .3s ease-out);
+    border-top: 4px solid $default-shade;
+    display: block;
+    width: 2rem;
+  }
   > li {
-	  &:hover .li-line,
-	  &:focus .li-line {
+	  &:hover .post-list-line,
+	  &:focus .post-list-line {
         width: 5rem;
       }
-	  &-line {
-  	  @include transition(all .3s ease-out);
-  	  border-top: 4px solid $default-shade;
-  	  display: block;
-  	  width: 2rem;
-  	}
+
     margin-bottom: $spacing-unit;
 
     &:not(:first-child) {
