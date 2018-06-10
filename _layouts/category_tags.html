@@ -8,6 +8,8 @@ layout: default
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
 
   <ul class="post-archives">
+	  <p>{{ site.tags }}</p>
+	  <p>{{ page.slug }}</p>
     {% if site.tags[page.slug] %}
       {% for post in site.tags[page.slug] %}
         {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
