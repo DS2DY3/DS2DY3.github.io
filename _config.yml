@@ -44,7 +44,7 @@ defaults:
       path: ""
       type: _tags
     values:
-      layout: tags_tags
+      layout: category_tags
   -
     scope:
       path: ""
