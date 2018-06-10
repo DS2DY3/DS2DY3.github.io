@@ -14,8 +14,9 @@ layout: default
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
 
-      <li>
-        <span class="post-meta">
+
+      {% include post_meta.html post=post%}
+        <!-- <span class="post-meta">
           <span class="info-title"><i class="icon-calendar"></i> Published: </span>
           {{ post.date | date: "%b %-d, %Y" }}
           {% if post.category != empty or post.tags != empty %}
@@ -32,8 +33,7 @@ layout: default
           {% else %}
             <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
           {% endif %}
-        </h2>
-      </li>
+        </h2> -->
     {% endfor %}
   </ul>
 
