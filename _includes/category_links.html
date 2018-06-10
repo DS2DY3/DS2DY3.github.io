@@ -1,9 +1,9 @@
 {% if include.category != empty and include.category != "" %} •
   <span class="info-title"><i class="icon-folder-open"></i> Category: </span>
-  {% for category in include.category %}
+  <!-- {% for category in include.category %}
     <a href="/category/{{ category }}" >{{ category }}</a>
   {% endfor %}
-  1
+  1 -->
   <a href="/category/{{ include.category }}" >{{ include.category }}</a>
 {% endif %}
 
