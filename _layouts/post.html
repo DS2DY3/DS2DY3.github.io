@@ -11,7 +11,7 @@ layout: default
     {% endif %}
     {% if page.date %}
       <span class="info-title"><i class="icon-calendar"></i> Published: </span>
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+      {{ post.date | date: "%b %-d, %Y" }}
     {% endif %}
 	{% if page.category != empty or page.tags != empty %}
 	  {% include category_links.html categories=page.category page=post.tags %}
