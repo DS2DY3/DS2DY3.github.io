@@ -48,8 +48,52 @@ layout: default
           </h2>
         </li>
       {% endfor %}
-      </ul>
+    </ul>
+  {% elsif page.category and page.category != "" %}
+    <h1 class="page-heading">Archive of Category '{{ page.category | escape }}'</h1>
+    {% if !site.categories or site.categories == "" %}
+      {% assign rawcates = "" %}
+      {% for post in site.posts %}
+        {% assign tcates = post.category | join:'|' | append:'|' %}
+        {% assign rawcates = rawcates | append:tcates %}
+      {% endfor %}
+      {% assign rawcates = rawcates | split:'|' | sort %}
 
+      {% assign site.categories = "" %}
+      {% for cate in rawcates %}
+        {% if cate != "" %}
+        {% if categories == "" %}
+          {% assign categories = cate | split:'|' %}
+        {% endif %}
+        {% unless categories contains cate %}
+          {% assign categories = categories | join:'|' | append:'|' | append:cate | split:'|' %}
+        {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <ul class="post-archives">
+      {% for post in site.categories[page.category] %}
+        <li>
+          <span class="post-meta">
+          {{ post.date | date: "%b %-d, %Y" }}
+          {% if post.category != empty or post.tags != empty %}
+            {% include category_links.html categories=post.categories tags=post.tags %}
+          {% endif %}
+          {% if post.external-url %}
+            • <a href="{{ post.url | relative_url }}">Permalink</a>
+          {% endif %}
+          </span>
+          <h2>
+          {% if post.external-url %}
+            <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
+          {% else %}
+            <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
+          {% endif %}
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
 
 </div>
