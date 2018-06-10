@@ -14,7 +14,7 @@ layout: default
         <span class="info-title"><i class="icon-calendar"></i> Published: </span>
         {{ page.date | date: "%b %-d, %Y" }} {{ empty }}
        {% if page.category != empty or page.tags != empty %}
-         {% include category_links.html categories=page.category page=page.tags %}
+         {% include category_links.html category=page.category tags=page.tags %}
        {% endif %}
       </p>
     {% endif %}
