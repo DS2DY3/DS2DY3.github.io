@@ -46,12 +46,12 @@ layout: default
   </div>
   {% if paginator.total_pages > 1 %}
     <div class="pagination">
-      {% if paginator.next_page %}
-        <a class="previous" href="{{ paginator.next_page_path | relative_url }}">&laquo; Older</a>
+      {% if paginator.previous_page %}
+        <a class="previous" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Newer</a>
       {% endif %}
 
-      {% if paginator.previous_page %}
-        <a class="next" href="{{ paginator.previous_page_path | relative_url }}">Newer &raquo;</a>
+      {% if paginator.next_page %}
+        <a class="next" href="{{ paginator.next_page_path | relative_url }}">Older &raquo;</a>
       {% endif %}
     </div>
   {% endif %}
