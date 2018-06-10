@@ -1,11 +1,11 @@
 {% if include.category != empty and include.category != "" %} •
   <span class="info-title"><i class="icon-folder-open"></i> Category: </span>
-  <a href="/category/{{ include.category }}" >{{ include.category }}</a>
+  <a href="/_category/{{ include.category }}" >{{ include.category }}</a>
 {% endif %}
 
 {% if include.tags != empty and include.tags != "" %} •
   <span class="info-title"><i class="icon-tags"></i> Tags: </span>
   {% for tag in include.tags %}
-    <a href="/tags/{{ tag }}" >{{ tag }}</a>
+    <a href="/_tags/{{ tag }}" >{{ tag }}</a>
   {% endfor %}
 {% endif %}
