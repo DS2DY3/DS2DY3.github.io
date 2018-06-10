@@ -22,6 +22,7 @@ layout: default
 
       <li>
         <span class="post-meta">
+          <span class="info-title"><i class="icon-calendar"></i> Published: </span>
           {{ post.date | date: "%b %-d, %Y" }}
           {% if post.category != empty or post.tags != empty %}
             {% include category_links.html category=post.category tags=post.tags %}

@@ -10,6 +10,7 @@ layout: default
       <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
     {% endif %}
     {% if page.date %}
+      <span class="info-title"><i class="icon-calendar"></i> Published: </span>
       <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
     {% endif %}
 	{% if page.category != empty or page.tags != empty %}
