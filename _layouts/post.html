@@ -30,7 +30,7 @@ layout: default
 		<a class="previous" href="{{ page.next.url | relative_url }}">&laquo; {{ page.next.title | truncatewords:5 }}</a>
 	  {% endif %}
 
-	  {% if age.previous %}
+	  {% if page.previous %}
 		<a class="next" href="{{ page.previous.url  | relative_url }}">{{ page.previous.title | truncatewords:5 }} &raquo;</a>
 	  {% endif %}
 	</div>
