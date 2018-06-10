@@ -5,56 +5,53 @@ layout: default
 <div class="home">
 
   {% if page.tag %}
-  	<h1 class="page-heading">Archive of Tag '{{ page.tag | escape }}'</h1>
-	{% if not site.tags or site.tags == "" %}
-		{% assign rawtags = "" %}
-		{% for post in site.posts %}
-		  {% assign ttags = post.tags | join:'|' | append:'|' %}
-		  {% assign rawtags = rawtags | append:ttags %}
-		{% endfor %}
-		{% assign rawtags = rawtags | split:'|' | sort %}
+    <h1 class="page-heading">Archive of Tag '{{ page.tag | escape }}'</h1>
+    {% if not site.tags or site.tags == "" %}
+      {% assign rawtags = "" %}
+      {% for post in site.posts %}
+        {% assign ttags = post.tags | join:'|' | append:'|' %}
+        {% assign rawtags = rawtags | append:ttags %}
+      {% endfor %}
+      {% assign rawtags = rawtags | split:'|' | sort %}
 
-		{% assign site.tags = "" %}
-		{% for tag in rawtags %}
-		  {% if tag != "" %}
-			{% if tags == "" %}
-			  {% assign tags = tag | split:'|' %}
-			{% endif %}
-			{% unless tags contains tag %}
-			  {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
-			{% endunless %}
-		  {% endif %}
-		{% endfor %}
-	{% endif %}
+      {% assign site.tags = "" %}
+      {% for tag in rawtags %}
+        {% if tag != "" %}
+        {% if tags == "" %}
+          {% assign tags = tag | split:'|' %}
+        {% endif %}
+        {% unless tags contains tag %}
+          {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+        {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
-	<ul class="post-archives">
-    {% for post in site.tags[page.tag] %}
-		<li>
-		  <span class="post-meta">
-			{{ post.date | date: "%b %-d, %Y" }}
-			{% if post.category != empty or post.tags != empty %}
-			  {% include category_links.html categories=post.categories tags=post.tags %}
-			{% endif %}
-			{% if post.external-url %}
-			  • <a href="{{ post.url | relative_url }}">Permalink</a>
-			{% endif %}
-		  </span>
-
-		  <h2>
-			{% if post.external-url %}
-			  <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
-			{% else %}
-			  <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
-			{% endif %}
-		  </h2>
-		</li>
-    {% endfor %}
-    </ul>
+    <ul class="post-archives">
+      {% for post in site.tags[page.tag] %}
+        <li>
+          <span class="post-meta">
+          {{ post.date | date: "%b %-d, %Y" }}
+          {% if post.category != empty or post.tags != empty %}
+            {% include category_links.html categories=post.categories tags=post.tags %}
+          {% endif %}
+          {% if post.external-url %}
+            • <a href="{{ post.url | relative_url }}">Permalink</a>
+          {% endif %}
+          </span>
+          <h2>
+          {% if post.external-url %}
+            <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
+          {% else %}
+            <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
+          {% endif %}
+          </h2>
+        </li>
+      {% endfor %}
+      </ul>
   {% else %}
-  	<h1 class="page-heading">Archive of Category '{{ page.category | escape }}'</h1>
+    <h1 class="page-heading">Archive of Category '{{ page.category | escape }}'</h1>
 
   {% endif % }
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
-
-
 </div>
