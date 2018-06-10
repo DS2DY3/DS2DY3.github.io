@@ -29,24 +29,7 @@ layout: default
 
     <ul class="post-archives">
       {% for post in site.tags[page.tag] %}
-        <li>
-          <span class="post-meta">
-          {{ post.date | date: "%b %-d, %Y" }}
-          {% if post.category != empty or post.tags != empty %}
-            {% include category_links.html category=post.category tags=post.tags %}
-          {% endif %}
-          {% if post.external-url %}
-            • <a href="{{ post.url | relative_url }}">Permalink</a>
-          {% endif %}
-          </span>
-          <h2>
-          {% if post.external-url %}
-            <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
-          {% else %}
-            <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
-          {% endif %}
-          </h2>
-        </li>
+        {% include post_meta.html post=post %}
       {% endfor %}
     </ul>
   {% elsif page.category and page.category != "" %}
@@ -74,24 +57,7 @@ layout: default
 
     <ul class="post-archives">
       {% for post in site.categories[page.category] %}
-        <li>
-          <span class="post-meta">
-          {{ post.date | date: "%b %-d, %Y" }}
-          {% if post.category != empty or post.tags != empty %}
-            {% include category_links.html category=post.category tags=post.tags %}
-          {% endif %}
-          {% if post.external-url %}
-            • <a href="{{ post.url | relative_url }}">Permalink</a>
-          {% endif %}
-          </span>
-          <h2>
-          {% if post.external-url %}
-            <a class="post-link" href="{{ post.external-url }}">{{ post.title | escape }} &rarr;</a>
-          {% else %}
-            <a class="post-link" href="{{ post.url | relative_url }}"{% if lang != empty %} lang="{{ lang }}"{% endif %}>{{ post.title | escape }}</a>
-          {% endif %}
-          </h2>
-        </li>
+        {% include post_meta.html post=post %}
       {% endfor %}
     </ul>
   {% endif %}
