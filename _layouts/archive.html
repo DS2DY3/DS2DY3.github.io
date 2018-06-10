@@ -10,12 +10,6 @@ layout: default
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
 
   <ul class="post-archives">
-    <!-- {% assign rawtags = "" %}
-    {% for post in site.posts %}
-      {% assign ttags = post.tags | join:'|' | append:'|' %}
-      {% assign rawtags = rawtags | append: ttags %}
-    {% endfor %}
-    {% assign tags = rawtags | split:'|' | uniq | sort %} -->
     {% for post in site.posts %}
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}

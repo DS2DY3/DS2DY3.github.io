@@ -37,13 +37,7 @@ layout: default
 
         <div class="post-content">
           {{ post.content | strip_html | truncatewords: 30 }}
-          <!-- {{ post.excerpt }} -->
         </div>
-        <!-- {% if post.content contains site.excerpt_separator %}
-          <p class="post-continue">
-            <a href="{{ post.url | relative_url }}">Read on &rarr;</a>
-          </p>
-        {% endif %} -->
       </li>
     {% endfor %}
   </ul>
