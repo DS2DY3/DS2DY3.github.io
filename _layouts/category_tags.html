@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="home">
-
+  {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
   {% if page.tag and page.tag != "" %}
     <h1 class="page-heading">Archive of Tag '{{ page.tag | escape }}'</h1>
     {% if !site.tags or site.tags == "" %}
@@ -51,5 +51,5 @@ layout: default
       </ul>
 
   {% endif % }
-  {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
+
 </div>
