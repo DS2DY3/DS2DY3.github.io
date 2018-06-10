@@ -13,7 +13,7 @@ layout: default
       <p class="post-meta">
         <span class="info-title"><i class="icon-calendar"></i> Published: </span>
         {{ page.date | date: "%b %-d, %Y" }} {{ empty }}
-       {% if page.category != empty or page.tags != empty %}
+       {% if (page.category and page.category != empty) or page.tags != empty %}
          {% include category_links.html category=page.category tags=page.tags %}
        {% endif %}
 	    •
