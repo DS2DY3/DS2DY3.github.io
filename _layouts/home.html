@@ -44,19 +44,15 @@ layout: default
 
 
   </div>
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.next_page %}
+        <a class="previous" href="{{ paginator.next_page_path | relative_url }}">&laquo; Older</a>
+      {% endif %}
 
+      {% if paginator.previous_page %}
+        <a class="next" href="{{ paginator.previous_page_path | relative_url }}">Newer &raquo;</a>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
-{% if paginator.total_pages > 1 %}
-    <nav class="pagination fn-clear">
-        <span class="pagination-icon"><i class="icon-copy"></i></span>
-        <ul class="pagination-list">
-            {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                    <li class="current"><a href="javascript:void(0);">{{ page }}</a></li>
-                {% else %}
-                    <li><a href="{{ site.url }}/{%if page > 1 %}page{{ page }}/{% endif %}">{{ page }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
-{% endif %}
