@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  {% if page.tag %}
+  {% if page.tag and page.tag != "" %}
     <h1 class="page-heading">Archive of Tag '{{ page.tag | escape }}'</h1>
     {% if !site.tags or site.tags == "" %}
       {% assign rawtags = "" %}
