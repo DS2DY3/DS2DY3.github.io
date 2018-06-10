@@ -17,11 +17,6 @@ sass:
   sass_dir:     _sass
   style:        compressed
 
-# Gems
-# plugins:
-  # - jekyll-paginate
-  # - jekyll-archives
-  # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
