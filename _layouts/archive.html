@@ -10,12 +10,12 @@ layout: default
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
 
   <ul class="post-archives">
-    {% assign rawtags = "" %}
+    <!-- {% assign rawtags = "" %}
     {% for post in site.posts %}
       {% assign ttags = post.tags | join:'|' | append:'|' %}
       {% assign rawtags = rawtags | append: ttags %}
     {% endfor %}
-    {% assign tags = rawtags | split:'|' | uniq | sort %}
+    {% assign tags = rawtags | split:'|' | uniq | sort %} -->
     {% for post in site.posts %}
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
@@ -24,7 +24,7 @@ layout: default
         <span class="post-meta">
           {{ post.date | date: "%b %-d, %Y" }}
           {% if post.categories != empty or post.tags != empty %}
-            {% include category_links.html categories=post.categories tags=tags %}
+            {% include category_links.html categories=post.categories tags=post.tags %}
           {% endif %}
           {% if post.external-url %}
             • <a href="{{ post.url | relative_url }}">Permalink</a>
