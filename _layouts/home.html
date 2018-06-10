@@ -25,8 +25,8 @@ layout: default
           <div class="post-list-line"></div>
           <p class="post-meta">
             {{ post.date | date: "%b %-d, %Y" }}
-            {% if post.categories != empty or post.tags != empty %}
-              {% include category_links.html categories=post.categories tags=post.tags %}
+            {% if post.category != empty or post.tags != empty %}
+              {% include category_links.html categories=post.category tags=post.tags %}
             {% endif %}
             {% if post.external-url %}
               • <a href="{{ post.url | relative_url }}">Permalink</a>
