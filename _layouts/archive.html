@@ -23,7 +23,7 @@ layout: default
       <li>
         <span class="post-meta">
           {{ post.date | date: "%b %-d, %Y" }}
-          {% if post.categories != empty or post.tags != empty %}
+          {% if post.category != empty or post.tags != empty %}
             {% include category_links.html category=post.category tags=post.tags %}
           {% endif %}
           {% if post.external-url %}
