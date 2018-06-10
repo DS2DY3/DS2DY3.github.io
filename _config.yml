@@ -32,10 +32,10 @@ paginate_path: /page:num
 collections:
   category:
     output: true
-    permalink: _category/:name/
+    permalink: category/:name/
   tags:
     output: true
-    permalink: _tags/:name/
+    permalink: tags/:name/
 
 
 defaults:
