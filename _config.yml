@@ -22,3 +22,11 @@ sass:
 permalink:      /:year-:month-:day/:title
 paginate:       5
 paginate_path: /page/:num
+
+
+#googleAnaly, your id link UA-12345678-X
+googleAnaly:
+  config: true
+  id: UA-80213062-1
+
+ busuanzi_enabled: true
