@@ -25,11 +25,15 @@ layout: default
   <h1 class="page-heading">Archive of {{ page.type }} '{{ page.title | escape }}'</h1>
 
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
+  <ul>
+  {% for post in site.tags[page.tag] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
+      {{ post.description }}
+    </li>
+  {% endfor %}
+  </ul>
+  <!-- <ul class="post-archives">
 
-  <ul class="post-archives">
-	  <p>{{ site.tags }} 1</p>
-	  <p>{{ page.type}} woshi </p>
-	  <p>{{ page.slug }} 2</p>
     {% if site.tags[page.slug] %}
       {% for post in site.tags[page.slug] %}
         {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
@@ -55,6 +59,6 @@ layout: default
         </li>
       {% endfor %}
     {% endif %}
-  </ul>
+  </ul> -->
 
 </div>

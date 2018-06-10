@@ -27,27 +27,3 @@ sass:
 permalink:      /:year-:month-:day/:title
 paginate:       5
 paginate_path: /page:num
-
-
-collections:
-  category:
-    output: true
-    permalink: category/:name/
-  tags:
-    output: true
-    permalink: tags/:name/
-
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: tags
-    values:
-      layout: category_tags
-  -
-    scope:
-      path: ""
-      type: category
-    values:
-      layout: category_tags
