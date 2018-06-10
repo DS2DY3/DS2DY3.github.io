@@ -10,12 +10,15 @@ layout: default
       <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
     {% endif %}
     {% if page.date %}
-      <span class="info-title"><i class="icon-calendar"></i> Published: </span>
-      {{ post.date | date: "%b %-d, %Y" }}
+      <p class="post-meta">
+        <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+        {{ post.date | date: "%b %-d, %Y" }}
+       {% if page.category != empty or page.tags != empty %}
+         {% include category_links.html categories=page.category page=post.tags %}
+       {% endif %}
+      </p>
     {% endif %}
-	{% if page.category != empty or page.tags != empty %}
-	  {% include category_links.html categories=page.category page=post.tags %}
-	{% endif %}
+
   </header>
 
   <div class="post-content" itemprop="articleBody">
