@@ -9,6 +9,7 @@ layout: default
 
   <ul class="post-archives">
 	  <p>{{ site.tags }}</p>
+	  <p>{{ page.type}} woshi </p>
 	  <p>{{ page.slug }}</p>
     {% if site.tags[page.slug] %}
       {% for post in site.tags[page.slug] %}
