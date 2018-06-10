@@ -12,25 +12,6 @@
 {% if include.tags != empty %} •
   <span class="info-title"><i class="icon-tags"></i> Tags: </span>
   {% for tag in include.tags %}
-    <a href="{{ site.url }}/tags.html#{{ tag }}-ref" >{{ tag }}</a>
+    <a href="/tags.html#{{ tag }}-ref" >{{ tag }}</a>
   {% endfor %}
-  <!-- {% for tag in include.tags %}
-    {% assign no_comma = forloop.last %}
-    {% for archive in site.archives %}
-      {% if archive.type == "tag" and archive.title == tag %}
-        <a href="{{ archive.url | relative_url }}">{{ archive.title | escape }}</a>{% unless no_comma %},{% endunless %}
-      {% endif %}
-    {% endfor %}
-  {% endfor %} -->
 {% endif %}
-
-<!-- <span class="info-title"><i class="icon-calendar"></i> Published: </span>
-<span class="info-date">{{ page.date | date_to_string }}</span>
-<span class="info-title"><i class="icon-folder-open"></i> Category: </span>
-<span class="info-link"><a href="{{ site.url }}/categories.html#{{ page.category }}-ref" >{{ page.category }}</a></span>
-<span class="info-title"><i class="icon-tags"></i> Tags: </span>
-<span class="info-link">
-{% for tag in include.tags %}
-<a href="{{ site.url }}/tags.html#{{ tag }}-ref" >{{ tag }}</a>
-{% endfor %}
-</span> -->
