@@ -38,12 +38,16 @@ collections:
     permalink: _tags/:name/
 
 
-# jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layout: category_archives
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+defaults:
+  -
+    scope:
+      path: ""
+      type: _tags
+    values:
+      layout: tags_tags
+  -
+    scope:
+      path: ""
+      type: _category
+    values:
+      layout: category_tags

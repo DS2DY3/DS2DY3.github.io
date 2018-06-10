@@ -8,7 +8,9 @@ layout: default
   {% capture site_lang %}{{ site.lang | default: "en" }}{% endcapture %}
 
   <ul class="post-archives">
-    {% for post in page.posts %}
+    {% if site.tags[page.slug] %}
+      {% for post in site.tags[page.slug] %}
+    <!-- {% for post in page.posts %} -->
       {% capture post_lang %}{{ post.lang | default: site_lang }}{% endcapture %}
       {% capture lang %}{% if post_lang != site_lang %}{{ post_lang }}{% endif %}{% endcapture %}
 
@@ -31,7 +33,8 @@ layout: default
           {% endif %}
         </h2>
       </li>
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
   </ul>
 
 </div>
