@@ -42,12 +42,12 @@ defaults:
   -
     scope:
       path: ""
-      type: _tags
+      type: tags
     values:
       layout: category_tags
   -
     scope:
       path: ""
-      type: _category
+      type: category
     values:
       layout: category_tags
