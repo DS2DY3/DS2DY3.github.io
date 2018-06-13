@@ -4,7 +4,7 @@ title: "About"
 permalink: /about/
 ---
 
-我叫D.S.Qiu，2013年毕业于中山大学，
+我叫whyidoit，2013年毕业于中山大学，
 
 一直从事游戏开发工作，目前就职于网易，
 
