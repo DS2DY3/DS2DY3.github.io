@@ -67,7 +67,7 @@ public class State
 public NetworkState(SmoothSync smoothSyncScript)
 {
 	this.smoothSync = smoothSyncScript;
-	state = new State(smoothSyncScript);  # 创建当前同步对象的状态
+	state = new State(smoothSyncScript);  // 创建当前同步对象的状态
 }
 ```
 
@@ -135,7 +135,7 @@ void applyInterpolationOrExtrapolation()
         float interpolationTime = approximateNetworkTimeOnOwner - interpolationBackTime * 1000;
 
         // Use interpolation if the target playback time is present in the buffer.
-		# 最新服务器时间戳比插值的时间戳还要更新使用插值更新，这个时候在追帧，比如网络延时了
+		// 最新服务器时间戳比插值的时间戳还要更新使用插值更新，这个时候在追帧，比如网络延时了
         if (stateCount > 1 && stateBuffer[0].ownerTimestamp > interpolationTime)
         {
             interpolate(interpolationTime, out targetState);
@@ -154,7 +154,7 @@ void applyInterpolationOrExtrapolation()
 
 **思考**
 
-这里的为啥要这么处理呢：当时间戳相差大，直接更新状态，反之则用下一个状态（不一定是最新状态）插值更新？
+> 这里的为啥要这么处理呢：当时间戳相差大，直接更新状态，反之则用下一个状态（不一定是最新状态）插值更新？
 
 我觉得可以分别对应游戏的两种情况：1.掉线重连，2网络延时卡。当我们掉线重连，我们希望用最短时间恢复游戏，那就直接用服务器状态更新，当网络卡，我们希望游戏表现的平滑不会突变，就用插值追帧的方式更新，这样会自然很多。
 
