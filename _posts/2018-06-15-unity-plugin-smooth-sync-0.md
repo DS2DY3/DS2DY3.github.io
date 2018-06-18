@@ -13,7 +13,7 @@ description: Smooth Sync 插件，状态同步
 - 状态同步：通过server将状态数据下发client，client接受server的状态变化，更新状态。
 - 帧同步：通过server将操作输入下发给client，client接受server的输入指令，做相应响应。
 
-两者各有优劣，这里就一一罗列了，参考文章[1][2][3][4][5]里面找到一些对比。我的最大的感受是：状态同步数据大，多个状态可以合并传输；帧同步对各个client的一致性要求更高，即相同输入=>相同表现，指令不容易合并。
+两者各有优劣，这里就一一罗列了，参考文章[1][][2][][3][][4][][5][]里面找到一些对比。我的最大的感受是：状态同步数据大，多个状态可以合并传输；帧同步对各个client的一致性要求更高，即相同输入=>相同表现，指令不容易合并。
 
 为了达到不同client的一致性：
 
@@ -167,7 +167,7 @@ void applyInterpolationOrExtrapolation()
 **思考**
 
 1. 除了设置阈值，我觉得应该属性还可以设置是否需要主动同步，来减少同步数据量，即client请求同步才正在同步。
-2. 如果游戏中整数大部分都是很小，或者在很窄的一个区间，可以用[边长整数（具体查看wikipedia][6]来降低`int`同步的字节数。
+2. 如果游戏中整数大部分都是很小，或者在很窄的一个区间，可以用[变长整数（具体查看wikipedia）][6]来减少`int`同步的字节数。
 
 ## 总结：
 
@@ -177,7 +177,6 @@ void applyInterpolationOrExtrapolation()
 - 逻辑和渲染分离和同步：client还需要对状态做渲染表现，受逻辑状态数据驱动，怎么做到渲染平滑，比如动作切换和动作加速，这些也是有很多难点。
 - ……
 
-参考：
 
 [0]: https://assetstore.unity.com/packages/tools/network/smooth-sync-96925 "Smooth Sync 2.02"
 [1]: https://gafferongames.com/post/state_synchronization/ "State Synchronization"
