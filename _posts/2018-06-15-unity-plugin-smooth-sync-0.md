@@ -38,28 +38,28 @@ description: Smooth Sync 插件，状态同步
 
 ```c#
 /// <summary>
-    /// The state of an object: timestamp, position, rotation, scale, velocity, angular velocity.
+/// The state of an object: timestamp, position, rotation, scale, velocity, angular velocity.
+/// </summary>
+public class State
+{
+    /// <summary>
+    /// The network timestamp of the owner when the state was sent.
     /// </summary>
-    public class State
-    {
-        /// <summary>
-        /// The network timestamp of the owner when the state was sent.
-        /// </summary>
-        public int ownerTimestamp;
-        /// <summary>
-        /// The position of the owned object when the state was sent.
-        /// </summary>
-        public Vector3 position;
-        /// <summary>
-        /// The rotation of the owned object when the state was sent.
-        /// </summary>
-        public Quaternion rotation;
-        /// <summary>
-        /// The scale of the owned object when the state was sent.
-        /// </summary>
-        public Vector3 scale;
-        // ……
-	}
+    public int ownerTimestamp;
+    /// <summary>
+    /// The position of the owned object when the state was sent.
+    /// </summary>
+    public Vector3 position;
+    /// <summary>
+    /// The rotation of the owned object when the state was sent.
+    /// </summary>
+    public Quaternion rotation;
+    /// <summary>
+    /// The scale of the owned object when the state was sent.
+    /// </summary>
+    public Vector3 scale;
+    // ……
+}
 ```
 
 然后在`NetWorkState`中创建当前状态对象，然后通过`Serialize`和`Deserialize`函数进行网络包的序列化和反序列化：
