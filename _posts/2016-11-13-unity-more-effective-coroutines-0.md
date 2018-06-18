@@ -367,3 +367,4 @@ private static IEnumerator<float> _StartWhenDone(WWW www, IEnumerator<float> pau
 
 [1]: https://www.assetstore.unity3d.com/cn/#!/content/54975 "More Effective Coroutines 3.01.3"
 [2]: https://www.assetstore.unity3d.com/cn/#!/content/68480 "More Effective Coroutines Pro"
+[3]: http://www.resetoter.cn/?p=66 "自己实现一个零GC的高效率协程"
